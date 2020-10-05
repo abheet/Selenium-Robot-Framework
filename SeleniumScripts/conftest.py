@@ -7,11 +7,11 @@ import config
 #get driver path
 def get_driver_details():
     if config.WHICH_DRIVER == 'IE':
-        driver =  webdriver.Ie(executable_path=config.IE_DRIVER)
+        driver_instance =  webdriver.Ie(executable_path=config.IE_DRIVER)
     elif config.WHICH_DRIVER == 'FIREFOX':
-        driver = webdriver.Firefox(executable_path=config.FIREFOX_DRIVER)
+        driver_instance = webdriver.Firefox(executable_path=config.FIREFOX_DRIVER)
     else:
-        driver = webdriver.Chrome(executable_path=config.CHROME_DRIVER)       
+        driver_instance = webdriver.Chrome(executable_path=config.CHROME_DRIVER)       
     return driver_instance
 
 @pytest.fixture()
