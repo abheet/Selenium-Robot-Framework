@@ -1,6 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from ..locators.locators import LoginPageLocators, SignUpPageLocator, AuthPageLocator, InvitePeronPageLocator
+from ..locators.locators import LoginPageLocators, SignUpPageLocator, AuthPageLocator, InvitePersonPageLocator
 from .util_methods import get_values, input_values, get_dummy_email, get_email_activation_link
 import config
 from .signinPage import LoginPage
@@ -100,7 +100,7 @@ class SignupPage(LoginPage):
         return page_title
 
     def invite_team_page_title(self):
-        locator = InvitePeronPageLocator.INVITE_PAGE_TITLE
+        locator = InvitePersonPageLocator.INVITE_PAGE_TITLE
         page_title = get_values(self.driver, locator, 'innerHTML')
         config.LOGGER.info(
             "Invite Team Screen title {} loaded successfully.".format(page_title))
@@ -109,7 +109,7 @@ class SignupPage(LoginPage):
     def skip_invite_team_form(self):
         try:
             element = WebDriverWait(self.driver, 20).until(
-                EC.presence_of_element_located(InvitePeronPageLocator.SKIP_BUTTON))
+                EC.presence_of_element_located(InvitePersonPageLocator.SKIP_BUTTON))
             element.click()
         except Exception as err:
             config.LOGGER.error(
@@ -117,7 +117,7 @@ class SignupPage(LoginPage):
 
     def email_confirmation_sent(self):
         try:
-            locator = InvitePeronPageLocator.SIGNUP_CONFIRMATION_TITLE
+            locator = InvitePersonPageLocator.SIGNUP_CONFIRMATION_TITLE
             page_titles = get_values(self.driver, locator, 'innerHTML')
             return page_titles
         except Exception as err:

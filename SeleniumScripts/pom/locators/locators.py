@@ -3,11 +3,11 @@ from selenium.webdriver.common.by import By
 
 class LoginPageLocators(object):
 
-    '''
+    """
     A Class for LoginPage Locators. All identifier details are available here.
     Variable naming conventions are maintened on the bases their identifiers
     i.e. used as suffixes with _id, _name or class
-    '''
+    """
 
     # ********* Login/SignIn Page 1 *******
     USERNAME_INPUT = (By.ID, "signin-email")
@@ -57,7 +57,7 @@ class SignUpPageLocator(object):
     DUMMY_EMAIL_ID = (By.ID, 'email_ch_text')
     CONFIRM_EMAIL_TEXT = (By.XPATH, "//a[text()='Confirm Your Email']")
 
-class InvitePeronPageLocator(object):
+class InvitePersonPageLocator(object):
     # *********Signup > Team Invites Page 2.1 *******
     # Invite Container Title 
     INVITE_PAGE_TITLE = (By.XPATH,"//span[@class='title']")
@@ -72,7 +72,7 @@ class InvitePeronPageLocator(object):
     NEXT_BUTTON = (By.XPATH, "//div[text()='Next']") 
 
     # Add New Person button
-    ADD_INVITE_FORM = (By.CLASS_NAME,"nvite-form add-one")
+    ADD_INVITE_FORM = (By.CLASS_NAME,"invite-form add-one")
    
     # *********Signup Submited > Page 2.2(resend email link) *******
     SIGNUP_CONFIRMATION_TITLE = (By.XPATH, "//p[text()='Pending email verification']")
@@ -98,7 +98,7 @@ class SaveMobilePageLocator(object):
 
 class ForgetPasswordPageLocator(object):
     """
-    A Class is for ForgetPassword page contains all locator of forget password page
+    A Class is for ForgetPassword page, it contains all locator for forget password page
     """
     
     EMAIL_INPUT = (By.NAME, "recover-email")
@@ -107,7 +107,7 @@ class ForgetPasswordPageLocator(object):
     
     PASSWORD_SENT_CONFIRMATION = (By.CLASS_NAME, "password-link__title") #Password reset email sent
     # click to action
-    CANCEL_HREF = (By.LINK_TEXT, "#")
+    CANCEL_HREF = (By.LINK_TEXT, "Cancel")
     RECOVER_PASSWORD_BUTTON = (By.XPATH, "//button[@name='recover-submit']")
     
     PASSWORD_UPDATED_SUCCESS = (By.XPATH, "//div[@class='auth-container']/h1[text()='Success']")
