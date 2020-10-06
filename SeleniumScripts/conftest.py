@@ -19,11 +19,11 @@ def browser(request):
     driver_instance.maximize_window()
     driver_instance.get("https://my.symphony.com")
     time.sleep(5)
-    # Skip test is browser not compatible
+    # Skip test if browser is not compatible
     if driver_instance.current_url == 'https://my.symphony.com/browsers.html':
         driver_instance.close()
         driver_instance.quit()
-        pytest.skip("Browser is no compatible with App")
+        pytest.skip("Browser is NOT compatible with App")
         config.LOGGER.info(
             "Browser is not compatible with app. Skipping test..")
        

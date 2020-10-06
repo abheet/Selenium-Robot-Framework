@@ -1,14 +1,12 @@
 from ..locators.locators import ForgetPasswordPageLocator, LoginPageLocators
 from .util_methods import get_values, input_values
 import config
-from .signinPage import LoginPage
+from .signupPage import SignupPage
 
 
-class ForgetPassword:
+class ForgetPassword(SignupPage):
     
     """ Class contains Forget Page actions """
-    def __init__(self, driver):
-        self.driver = driver
 
     def is_forget_password_page_displayed(self):
         try:
@@ -53,3 +51,5 @@ class ForgetPassword:
         element = self.driver.find_element(
             *LoginPageLocators.FORGET_PASSWORD_HREF)
         element.click()
+
+  

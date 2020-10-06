@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from ..locators.locators import LoginPageLocators, SignUpPageLocator, AuthPageLocator
@@ -107,8 +106,4 @@ class LoginPage:
             config.LOGGER.error(
                 "Error encountered while executing dashboard_content :{}".format(err))
 
-    def check_compatibilty(self):
-        if self.driver.current_url == 'https://my.symphony.com/browsers.html':
-            return True
-        else:
-            return False
+    

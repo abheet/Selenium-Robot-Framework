@@ -9,7 +9,7 @@ class TestSignIn:
     @pytest.mark.lowest
     def test_signin_form_exist(self):
         """
-        Test is to validate SignUp existence on the page 
+        Test is to validate signin existence on the page 
         If Assert = True i.e. Login page available and if its False then
         it mean login form is not available or not loaded
         """

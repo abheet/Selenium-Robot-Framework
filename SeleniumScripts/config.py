@@ -8,7 +8,7 @@ WHICH_DRIVER = 'FIREFOX'
 
 #driver paths
 CHROME_DRIVER = 'BrowserDrivers/Chrome/linux/chromedriver'
-FIREFOX_DRIVER = '/home/abheet/Work/SeleniumScripts/BrowserDrivers/Firefox/linux64/geckodriver'
+FIREFOX_DRIVER = 'BrowserDrivers/Firefox/linux64/geckodriver'
 
 #only for windows
 IE_DRIVER = 'BrowserDrivers/InternetExplorer/IEDriverServer.exe'
