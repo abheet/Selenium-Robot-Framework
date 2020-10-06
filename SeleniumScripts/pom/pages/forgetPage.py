@@ -7,7 +7,6 @@ from .signinPage import LoginPage
 class ForgetPassword:
     
     """ Class contains Forget Page actions """
-
     def __init__(self, driver):
         self.driver = driver
 
@@ -50,6 +49,7 @@ class ForgetPassword:
                 "Error encountered while executing click_recover_password_button :{}".format(err))
 
     def click_forget_password_link(self):
+        
         element = self.driver.find_element(
             *LoginPageLocators.FORGET_PASSWORD_HREF)
         element.click()
