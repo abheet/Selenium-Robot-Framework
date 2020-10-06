@@ -4,7 +4,7 @@ LOGGER = logging.getLogger(__name__)
 #Which browser need for test
 
 #Possible values :  CHROME/FIREFOX or IE
-WHICH_DRIVER = 'CHROME' 
+WHICH_DRIVER = 'FIREFOX' 
 
 #driver paths
 CHROME_DRIVER = 'BrowserDrivers/Chrome/linux/chromedriver'
