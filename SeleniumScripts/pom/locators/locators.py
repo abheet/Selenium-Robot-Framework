@@ -20,11 +20,11 @@ class LoginPageLocators(object):
 
     # Click to actions
     FORGET_PASSWORD_HREF = (By.LINK_TEXT, "Forgot your password?")
-    SIGNUP_HREF = (By.LINK_TEXT, 'Sign up')
+    SIGNUP_HREF = (By.LINK_TEXT, "Sign up")
     LOGIN_SUBMIT_BUTTON = (By.NAME,"signin-submit")
     
     #Dashboard Locator
-    DASHBOARD_CONTENT = (By.XPATH, "//span[@class='navigation-item-name']")
+    DASHBOARD_CONTENT = (By.XPATH, "//ul[@id='toolbar-settings-submenu']//child::li[1]")
 
 class AuthPageLocator(object):
     """

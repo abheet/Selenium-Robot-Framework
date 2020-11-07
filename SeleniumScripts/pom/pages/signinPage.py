@@ -12,8 +12,8 @@ class LoginPage:
 
     def is_login_form_displayed(self):
         try:
-            element = self.driver.find_element(
-                *LoginPageLocators.LOGIN_SUBMIT_BUTTON)
+            element = WebDriverWait(self.driver, 30).until(
+                EC.presence_of_element_located(LoginPageLocators.LOGIN_SUBMIT_BUTTON))
             config.LOGGER.info("Login page displayed on page")
             return element.is_displayed()
         except Exception as err:
@@ -22,7 +22,8 @@ class LoginPage:
 
     def signup_link_clickable(self):
         try:
-            element = self.driver.find_element(*LoginPageLocators.SIGNUP_HREF)
+            element = WebDriverWait(self.driver, 30).until(
+                EC.presence_of_element_located(LoginPageLocators.SIGNUP_HREF))
             element.click()
             config.LOGGER.info("SignUp link clicked from Login Page")
             return self.driver.current_url

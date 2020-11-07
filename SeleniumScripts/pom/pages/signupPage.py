@@ -11,8 +11,9 @@ class SignupPage(LoginPage):
 
     def is_signup_form_displayed(self):
         try:
-            element = self.driver.find_element(
-                *SignUpPageLocator.SIGNUP_PAGE_SUBHEADER)
+            element = WebDriverWait(self.driver, 5).until(
+                EC.presence_of_element_located(
+                    SignUpPageLocator.SIGNUP_PAGE_SUBHEADER))
             config.LOGGER.info(
                 "Actual Result: Signup form loaded and displayed successfully")
             return element.get_attribute('innerHTML')
@@ -22,7 +23,9 @@ class SignupPage(LoginPage):
 
     def click_signin_link(self):
         try:
-            element = self.driver.find_element(*SignUpPageLocator.LOGIN_LINK)
+            element = WebDriverWait(self.driver, 5).until(
+                EC.presence_of_element_located(
+                    SignUpPageLocator.LOGIN_LINK))
             element.click()
             config.LOGGER.info(
                 "Actual Result: Signin link clicked successfully")

@@ -57,6 +57,6 @@ class TestSignIn:
             self.login.enter_otp()
             # Verify OTP
             self.login.submit_otp_button()
-            assert self.login.dashboard_content() == 'All Following'
+            assert 'Profile' in self.login.dashboard_content()
             
 

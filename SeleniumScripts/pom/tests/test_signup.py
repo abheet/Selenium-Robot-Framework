@@ -68,7 +68,7 @@ class TestSignUp:
         activation_link = get_email_activation_link(self.driver,dummy_email)
         if activation_link:
             self.driver.get(activation_link)
-            self.login = LoginPage(self)
+            self.login = LoginPage(self.driver)
             #If True Email activation completed and Login pages loaded thereafter
             assert self.login.is_login_form_displayed() == True
 
