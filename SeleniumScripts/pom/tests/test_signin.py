@@ -14,7 +14,7 @@ class TestSignIn:
         it mean login form is not available or not loaded
         """
         self.login = LoginPage(self.driver)
-        self.driver.get('https://my.symphony.com/')
+        self.driver.get('https://my.site.com/')
         # If True Actual Result: Login form exist and visible on screen
         assert self.login.is_login_form_displayed() == True
 
@@ -23,9 +23,9 @@ class TestSignIn:
     def test_signup_link_clickable(self):
         """ Test is to validate signup link is working"""
         self.login = LoginPage(self.driver)
-        self.driver.get('https://my.symphony.com/')
+        self.driver.get('https://my.site.com/')
         current_url = self.login.signup_link_clickable()
-        assert current_url == 'https://my.symphony.com/#signup'
+        assert current_url == 'https://my.site.com/#signup'
 
 
     @pytest.mark.medium
@@ -34,7 +34,7 @@ class TestSignIn:
             invalid credentials used to login 
         """
         self.login = LoginPage(self.driver)
-        self.driver.get('https://my.symphony.com/')
+        self.driver.get('https://my.site.com/')
         self.login.enter_username("abheet")
         self.login.enter_password("abheet")
         self.login.click_signin_button()
@@ -47,7 +47,7 @@ class TestSignIn:
     def test_sign_in(self):
         """ Test Login flow with valid flow"""
         self.login = LoginPage(self.driver)
-        self.driver.get('https://my.symphony.com/')
+        self.driver.get('https://my.site.com/')
         self.login.enter_username("abheet.jamwal@gmail.com")
         self.login.enter_password("Qwerty@123")
         self.login.click_signin_button()

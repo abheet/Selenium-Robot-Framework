@@ -16,7 +16,7 @@ class TestForgetPassword:
         """
         #If True Actual Result: forget password form exist and visible on screen
         self.reset_password = ForgetPassword(self.driver)
-        self.driver.get("https://my.symphony.com/#forgot-password")
+        self.driver.get("https://my.site.com/#forgot-password")
         assert self.reset_password.is_forget_password_page_displayed() == True
     
         
@@ -26,7 +26,7 @@ class TestForgetPassword:
             invalid credentials used to login 
         """
         self.reset_password = ForgetPassword(self.driver)
-        self.driver.get("https://my.symphony.com/#forgot-password")
+        self.driver.get("https://my.site.com/#forgot-password")
         self.reset_password.enter_email("")
         self.reset_password.click_recover_password_button()
         error = self.reset_password.validation_message()
@@ -39,7 +39,7 @@ class TestForgetPassword:
             user not click on captcha checkbox and click on recover password button 
         """
         self.reset_password = ForgetPassword(self.driver)
-        self.driver.get("https://my.symphony.com/#forgot-password")
+        self.driver.get("https://my.site.com/#forgot-password")
         self.reset_password.enter_email("abheet.jamwal@gmail.com")
         self.reset_password.click_recover_password_button()
         error = self.reset_password.validation_message()

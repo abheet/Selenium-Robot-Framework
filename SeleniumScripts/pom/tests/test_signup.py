@@ -16,22 +16,22 @@ class TestSignUp:
         it mean signup form is not available or not loaded
         """
         self.signup = SignupPage(self.driver)
-        self.driver.get('https://my.symphony.com/#signup')
+        self.driver.get('https://my.site.com/#signup')
         assert self.signup.is_signup_form_displayed() == config.SIGNUP_SUB_TITLE
         
     @pytest.mark.lowest    
     def test_signin_link_working(self):
         """ Test is to validate signup link is working, and is marked as lowest priority  """
-        self.driver.get('https://my.symphony.com/#signup')
+        self.driver.get('https://my.site.com/#signup')
         self.signup = SignupPage(self.driver)
         current_url = self.signup.click_signin_link()
         config.LOGGER.info("Actual Result: Signin link on SignUp form exist and clicked successfully")
-        assert current_url == 'https://my.symphony.com/#login'
+        assert current_url == 'https://my.site.com/#login'
 
     @pytest.mark.medium    
     def test_validation_for_blank_submitions(self):
         """ Test is to check validations working or not ,and is marked as medium priority  """
-        self.driver.get("https://my.symphony.com/#signup")
+        self.driver.get("https://my.site.com/#signup")
         self.signup = SignupPage(self.driver)
         self.signup.enter_email("test@test.com")
         self.signup.enter_first_name("")
@@ -49,7 +49,7 @@ class TestSignUp:
         global dummy_email
         dummy_email = get_dummy_email(self.driver)
         #start Signup flow
-        self.driver.get("https://my.symphony.com/#signup")
+        self.driver.get("https://my.site.com/#signup")
         self.signup = SignupPage(self.driver)
         #fill the signup form
         self.signup.enter_first_name("Auto")

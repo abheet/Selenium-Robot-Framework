@@ -17,10 +17,10 @@ def browser(request):
         driver_instance = webdriver.Chrome(
             executable_path=config.CHROME_DRIVER)
     driver_instance.maximize_window()
-    driver_instance.get("https://my.symphony.com")
+    driver_instance.get("https://my.site.com")
     time.sleep(5)
     # Skip test if browser is not compatible
-    if driver_instance.current_url == 'https://my.symphony.com/browsers.html':
+    if driver_instance.current_url == 'https://my.site.com/browsers.html':
         driver_instance.close()
         driver_instance.quit()
         pytest.skip("Browser is NOT compatible with App")

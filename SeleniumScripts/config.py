@@ -30,5 +30,5 @@ LOGIN_2FACTOR_AUTH_HEADER = 'Authentication Required'
 
 
 #Twilio Account
-TWILIO_ACCOUNT = "ACf24b6fc1d2824781c79ec49705cb2205"
-TWILIO_AUTH_TOKEN= "cabe53adf11e05f1cd6bd51afade6241"
+TWILIO_ACCOUNT = "API key -here 9ec49705cb2205"
+TWILIO_AUTH_TOKEN= "Token here"
