@@ -1,4 +1,4 @@
-# Home Assignment 
+#Page Object Model  implementation with Selenium-Python(pytest) Webpage automation
 #Author: Abheet Singh Jamwal
 
 
@@ -8,9 +8,9 @@ Automation Scripts for Validating
 -ForgetPassword Page
   
   
-Installation steps
+#Installation steps
   
-Prerequistes
+##Prerequistes
   
 1) Python 2.x or 3.x
 2) Virtual Env
@@ -31,7 +31,7 @@ Steps to set Up env
 5 Once (demo_env) is activated scripts are ready to run.
   
   
-How to run script:
+#How to run script:
 
   1)cd demp/SeleniumScript (i.e Current Working Directory)
   
