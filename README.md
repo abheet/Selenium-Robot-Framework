@@ -1,59 +1,87 @@
-# Page Object Model  implementation with Selenium-Python(pytest) Webpage automation
->Author: Abheet Singh Jamwal
+**Title:** Page Object Model Implementation with Selenium-Python (Pytest) for Webpage Automation
 
+**Author:** Abheet Singh Jamwal
 
-# **Automation Scripts for Validating**
-> Login Page
-> SignUp Page
-> ForgetPassword Page
-  
-  
-# Installation steps
-  
-**Prerequistes**
->
-1) Python 2.x or 3.x
-2) Virtual Env
-  
-## Steps to set Up env
-1) Take Pull of repo 
+## Introduction
 
-2) Go inside demp/SeleniumScript folder
-	cmd: />cd demp/SeleniumScript
+This repository showcases a Page Object Model (POM) implementation using Selenium-Python and Pytest for automating web page interactions. It includes test scripts for validating login, signup, and forgot password functionalities.
 
-3) Optional step can be skipped: If want to create own virtual env Install all required PIP packages
+## Prerequisites
 
-	cmd:/>demp/SeleniumScript> pip install -r pip-requirement.txt (file available inside Current working dir)
+* Python 2.x or 3.x (Ensure compatibility with your chosen Selenium version)
+* Virtual environment (Recommended for isolated package management)
 
-4 Activate  virtual env 
-	i.e :/> source demo_env/bin/activate 
+## Installation
 
-5 Once (demo_env) is activated scripts are ready to run.
-  
-  
-# How to run script:
+**1. Clone the Repository**
 
-  1)  Goto current work directory
-     > cd demp/SeleniumScript (i.e Current Working Directory)
-  
-  2) There are three test files under tests folder
-  
-  3)if want to run all test suites
-   > CMD:> pytest  This command detect all tests available in tests folder and execute all testcases at once
-  	
-  4)if want to run only one test file
-  > CMD:> pytest -k Test file name  (file name like test_forget_password, test_login or test signup...)
-  	
-  5)if want to run any specific testcase within test file
-  > CMD:> pytest -k Test file name::test Case method_name
-  	
-  6)if want to run test case w.r.t maker like lowest,medium or highest tags
-  > CMD:>pytest -k Test file name -m lowest 
-  	
-  7)if want to get reports
-  > CMD:> pytest -k Test file name --html report_name.html 
-  	
-  8) if want to run test parallelly
-  > CMD:> pytest -n 3 (3 is number of worker it can be any number)
-  			
-  
+```bash
+git clone https://github.com/your-username/SeleniumScript.git
+```
+
+**2. Set Up a Virtual Environment (Optional but Recommended)**
+
+[Instructions for creating a virtual environment: Refer to official documentation for your operating system or virtual environment tool.]
+
+**3. Install Dependencies**
+
+```bash
+cd SeleniumScript  # Navigate to the project directory
+pip install -r requirements.txt  # Install required packages from the requirements file
+```
+
+**4. Activate Virtual Environment (if applicable)**
+
+Follow the instructions specific to your chosen virtual environment manager (e.g., `source venv/bin/activate` for virtualenv).
+
+## Running Tests
+
+**1. Navigate to the Project Directory**
+
+```bash
+cd SeleniumScript
+```
+
+**2. Running All Test Suites**
+
+```bash
+pytest  # This command detects all tests in the "tests" folder and executes them
+```
+
+**3. Running Specific Test Files**
+
+```bash
+pytest -k <test_file_name>  # Example: pytest -k test_login
+```
+
+**4. Running Specific Test Cases within a File**
+
+```bash
+pytest -k <test_file_name>::<test_case_method_name>  # Example: pytest -k test_signup::test_valid_signup
+```
+
+**5. Running Tests by Marker (lowest, medium, highest)**
+
+```bash
+pytest -k <test_file_name> -m <marker>  # Example: pytest -k test_forgot_password -m lowest
+```
+
+**6. Generating HTML Reports**
+
+```bash
+pytest -k <test_file_name> --html=report.html  # Example: pytest -k test_login --html=login_report.html
+```
+
+**7. Parallel Test Execution (Optional)**
+
+```bash
+pytest -n <number_of_workers>  # Example: pytest -n 4  (Replace 4 with the desired number of worker processes)
+```
+
+**Note:** Replace `<test_file_name>` with the actual test file name (e.g., `test_login.py`) and `<test_case_method_name>` with the specific test case method name within the file.
+
+## Additional Notes
+
+* Refer to the `requirements.txt` file for the exact versions of the required packages.
+* Ensure compatibility between your chosen Selenium version and the targeted web browser.
+* Consider using dedicated test reporting frameworks like Allure or ReportLab for more comprehensive reports.
